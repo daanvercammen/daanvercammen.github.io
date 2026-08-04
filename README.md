@@ -36,6 +36,12 @@
             opacity: 0.5; 
         }
 
+	/* Gebruik deze class voor PNG's zonder achtergrond */
+	.project-media.no-bg {
+    	background-color: transparent;
+    	border: none;
+	}
+
         /* Perfecte centrering van de naam op de GIF */
         .hero-text {
             position: absolute;
@@ -478,8 +484,8 @@
         <img src="Koalawards1.jpg" alt="Koalawards Live Audio & Lichtsturing">
     </div>
     <div class="project-content">
-        <h3 class="sub-project-title">Lichtsturing en audio installatie</h3>
-        <p>In 2021 starte ik samen met een vriend de Koalawards, een (inmiddels)
+        <h3 class="sub-project-title">Lichtsturing en audio-installatie</h3>
+        <p>In 2021 startte ik samen met een vriend de Koalawards, een (inmiddels)
 jaarlijkse awardshow op mijn scouts. Voor dit evenement ontwerp ik de awards,
 maak ik lampen met eigen besturing (via C++) en installeer ik de volledige
 geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
@@ -494,7 +500,7 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
     </div>
     <div class="project-content">
         <h3 class="sub-project-title">Presentatie en video</h3>
-        <p>Naast de installatie proberen we vooral de mensen een toffe avond te geven. Dit door een leuke show te presenteren vol met leuke filmpjes en mooie momenten.</p>
+        <p>Naast de installatie proberen we vooral de mensen een toffe avond te geven. Dit door een show te presenteren vol met leuke filmpjes en mooie momenten.</p>
     </div>
 </div>
             </section>
@@ -504,15 +510,17 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                 <h2 class="main-project-title">Masterproef</h2>
                 
                 <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
-                <div class="project-row">
-                    <div class="project-media">
-                        <img src="master.png" alt="Masterproef Sensorontwikkeling">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="sub-project-title">Sensorontwikkeling & IoT</h3>
-                        <p>In het kader van mijn masterproef ontwierp en bouwde ik zelfstandig fysieke sensoren die specifiek zijn afgestemd op het accuraat opmeten en registreren van omgevingsgeluid bij jeugdverblijven. Deze sensoren brachten geluidsoverlast in en rond jeugdverblijven dan ook uitstekend in kaart. Met als voornaamste doel de uitbaters van jeugdverblijven een zo goed mogelijk beeld te geven op de overlast die groepen veroorzaken. Hiervoor werd een PCB ontworpen, waarop alle componenten zorgvuldig gesoldeerd werden.</p>
-                    </div>
-                </div>
+                <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
+<div class="project-row">
+    <!-- Voeg 'no-bg' toe aan deze div -->
+    <div class="project-media no-bg">
+        <img src="master.png" alt="Masterproef Sensorontwikkeling">
+    </div>
+    <div class="project-content">
+        <h3 class="sub-project-title">Sensorontwikkeling & IoT</h3>
+        <p>Voor mijn masterproef ontwierp en bouwde ik zelfstandig fysieke IoT-sensoren om omgevingsgeluid rond jeugdverblijven accuraat op te meten. Hiervoor ontwierp ik een eigen PCB waarop alle componenten zorgvuldig werden gesoldeerd.</p>
+    </div>
+</div>
 
                 <!-- Tweede foto (Rechts) + Tweede tekst (Links) -->
                 <div class="project-row row-reverse">
@@ -521,7 +529,7 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                     </div>
                     <div class="project-content">
                         <h3 class="sub-project-title">Feedback uitbaters</h3>
-                        <p>De verzamelde data wordt via algoritmes geclassificeerd aan de hand van frequentiespectra. Op deze manier krijgen de uitbaters een duidelijk en overzichtelijk overzicht, die ze via een website kunnen raadplegen.</p>
+                        <p>De verzamelde data wordt via algoritmes geclassificeerd aan de hand van frequentiespectra. Op deze manier krijgen de uitbaters een duidelijk overzicht, die ze via een website kunnen raadplegen.</p>
                     </div>
                 </div>
             </section>
@@ -536,8 +544,8 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                         <img src="boomhut1.jpg" alt="Boomhut Constructie">
                     </div>
                     <div class="project-content">
-                        <h3 class="sub-project-title">Hands-on Constructie</h3>
-                        <p>Tijdens de lockdown ontwierp en bouwde ik een eigen boomhut. Met weinig middelen, geen proffesioneele hulp maar wel veel tijd.</p>
+                        <h3 class="sub-project-title">Constructie</h3>
+                        <p>Tijdens de lockdown ontwierp en bouwde ik een eigen boomhut. Met weinig middelen, geen professionele hulp maar wel veel tijd.</p>
                     </div>
                 </div>
 
@@ -547,8 +555,8 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                         <img src="boomhut2.jpg" alt="Boomhut Elektriciteitsnetwerk">
                     </div>
                     <div class="project-content">
-                        <h3 class="sub-project-title">Residentiële Elektrotechniek</h3>
-                        <p>De boomhut werd voorzien van de nodige elektrische infrastructuur, dit maakt het de ideale studie locatie.</p>
+                        <h3 class="sub-project-title">Infrastructuur</h3>
+                        <p>De boomhut werd voorzien van de nodige elektrische infrastructuur. Dit maakt het de ideale studielocatie.</p>
                     </div>
                 </div>
             </section>
@@ -564,7 +572,7 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                     </div>
                     <div class="project-content">
                         <h3 class="sub-project-title">Grafisch Ontwerp</h3>
-                        <p>Creatie van het visuele concept en digitale vectorbestanden voor de truien van ons internationaalscoutskamp.</p>
+                        <p>Creatie van het visuele concept en digitale vectorbestanden voor de truien van ons internationaal scoutskamp.</p>
                     </div>
                 </div>
 
@@ -575,7 +583,7 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                     </div>
                     <div class="project-content">
                         <h3 class="sub-project-title">Project- & Leveranciersbeheer</h3>
-                        <p>Het volledige logistieke proces van A tot Z doorlopen en zorgen voor een effectief eindresultaat. Iets dat ik naast deze truien ook verder heb ontwikkeld als hoodfleider.</p>
+                        <p>Naast concepten zorg ik ook voor effectief eindresultaat. Iets dat ik naast deze truien ook verder heb ontwikkeld als hoofdleider.</p>
                     </div>
                 </div>
             </section>
