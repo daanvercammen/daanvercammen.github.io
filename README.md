@@ -446,7 +446,7 @@
 
     <!-- Banner -->
     <div class="hero-banner">
-        <img src="koalawards.gif" alt="Koalawards Banner">
+        <img src="Koalawards.gif" alt="Koalawards Banner">
         <div class="hero-text">
             <h1>Daan Vercammen</h1>
         </div>
@@ -457,7 +457,7 @@
 
         <!-- Korte Introductie -->
         <section id="over-mij" class="about-section">
-            <img src="daan.png" alt="Daan Vercammen" class="about-image">
+            <img src="Daan.png" alt="Daan Vercammen" class="about-image">
             <div class="about-text">
                 <h2>Over mij</h2>
                 <p>Ik ben een pas afgestudeerde Industrieel Ingenieur Elektronica met een passie voor media en audio. Ik combineer een sterke technische achtergrond met creativiteit en een praktische aanpak. Door mijn engagement als groepsleider bij de scouts heb ik geleerd om samen te werken met anderen en een team aan te sturen. Ik ben leergierig, sociaal en doelgericht. Ik zoek dan ook graag naar innovatieve oplossingen voor technische uitdagingen.</p>
@@ -475,7 +475,7 @@
 <div class="project-row">
     <div class="project-media">
         <!-- Jouw foto van de liveband op het podium -->
-        <img src="koalawards1.jpg" alt="Koalawards Live Audio & Lichtsturing">
+        <img src="Koalawards1.jpg" alt="Koalawards Live Audio & Lichtsturing">
     </div>
     <div class="project-content">
         <h3 class="sub-project-title">Lichtsturing en audio installatie</h3>
@@ -490,7 +490,7 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
 <div class="project-row row-reverse">
     <div class="project-media">
         <!-- Jouw foto met het publiek en het projectiescherm -->
-        <img src="koalawards2.jpg" alt="Koalawards Presentatie & Publiek">
+        <img src="Koalawards2.jpg" alt="Koalawards Presentatie & Publiek">
     </div>
     <div class="project-content">
         <h3 class="sub-project-title">Presentatie en video</h3>
@@ -560,7 +560,7 @@ geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
                 <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
                 <div class="project-row">
                     <div class="project-media">
-                        <img src="scoutstruien1.png" alt="Scoutstrui Grafisch Ontwerp">
+                        <img src="Scoutstruien1.png" alt="Scoutstrui Grafisch Ontwerp">
                     </div>
                     <div class="project-content">
                         <h3 class="sub-project-title">Grafisch Ontwerp</h3>
