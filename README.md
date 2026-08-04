@@ -1,1 +1,664 @@
-# daanv42.github.io
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daan Vercammen | Portfolio</title>
+    <style>
+        /* Pure Black & Ultra Clean Modern Theme */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 1. Volledige controle over de banner */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 75vh; 
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            opacity: 0.5; 
+        }
+
+        /* Perfecte centrering van de naam op de GIF */
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 2; 
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* 2. De Hypermoderne Zwevende Navigatiebalk */
+        .main-nav {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent; 
+            border-bottom: none;
+            z-index: 100;
+        }
+
+        .main-nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #111111;
+        }
+
+        .nav-container {
+            max-width: 100%; 
+            margin: 0;
+            padding: 20px 40px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            font-weight: 800; 
+            text-decoration: none;
+            font-size: 1.2rem;
+            letter-spacing: -0.05em;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px; 
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #ffffff; 
+            text-decoration: none;
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            letter-spacing: 0.08em;
+            text-transform: uppercase; 
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.7; 
+        }
+
+        /* Dropdown functionaliteit */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding-bottom: 15px; 
+            margin-bottom: -15px;
+        }
+
+        .arrow {
+            font-size: 0.6rem;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown:hover .arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: transparent; 
+            min-width: 180px;
+            border: none; 
+            z-index: 101;
+            top: 100%; 
+            right: 0; 
+            padding: 15px 0 0 0;
+        }
+
+        .main-nav.scrolled .dropdown-content {
+            background-color: #080808; 
+            border: 1px solid #1a1a1a;
+            padding: 10px 0;
+            margin-top: 10px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.8);
+        }
+
+        .dropdown-content a {
+            color: #ffffff; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.08em;
+            font-size: 0.8rem;
+            padding: 8px 0; 
+            text-decoration: none;
+            display: block;
+            text-align: right; 
+            transition: opacity 0.2s ease;
+        }
+
+        .main-nav.scrolled .dropdown-content a {
+            padding: 8px 20px; 
+        }
+
+        .dropdown-content a:hover {
+            background-color: transparent;
+            opacity: 0.5;
+        }
+
+        .main-nav.scrolled .dropdown-content a:hover {
+            background-color: #111111;
+            opacity: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Breedbeeld Content Wrapper */
+        .container {
+            max-width: 1400px; 
+            margin: 0 auto;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        .about-section, .project-section, .skills-section, .contact-section {
+            scroll-margin-top: 100px; 
+        }
+
+        /* About Section - Volledig links tegen de rand */
+        .about-section {
+            margin: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 50px;
+        }
+
+        .about-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #222222;
+            flex-shrink: 0;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin: 0 0 16px 0;
+            letter-spacing: -0.03em;
+        }
+
+        .about-text p {
+            color: #a0a0a0;
+            font-size: 1.15rem;
+            margin: 0;
+            max-width: 900px;
+        }
+
+        /* Breedbeeld Project Layout (Zigzag per sub-item) */
+        .project-section {
+            margin-bottom: 140px;
+        }
+
+        /* De hoofdtitel van het gehele project */
+        .project-section h2.main-project-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0 0 40px 0;
+            border-bottom: 1px solid #222222;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Een individueel sub-blok (Rij) binnen het project */
+        .project-row {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr; 
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px; 
+        }
+
+        /* Omgekeerde rij voor het zigzag effect per foto */
+        .project-row.row-reverse {
+            grid-template-columns: 0.9fr 1.1fr;
+            direction: rtl; 
+        }
+
+        .project-row.row-reverse .project-content,
+        .project-row.row-reverse .project-media {
+            direction: ltr; 
+        }
+
+        .project-media {
+            width: 100%;
+            background-color: #0a0a0a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #151515;
+        }
+
+        .project-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-content h3.sub-project-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0 0 12px 0;
+            color: #ffffff;
+        }
+
+        .project-content p {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            border-top: 1px solid #222222;
+            padding-top: 80px;
+            margin-bottom: 120px;
+        }
+
+        .skills-section h2 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 40px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0 0 20px 0;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tags span {
+            background-color: #111111;
+            border: 1px solid #222222;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Sectie Styling */
+        .contact-section {
+            border-top: 1px solid #222222;
+            padding: 80px 0 140px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-cards {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background-color: #111111;
+            border: 1px solid #222222;
+            padding: 30px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 300px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .contact-card:hover {
+            border-color: #ffffff;
+            background-color: #151515;
+        }
+
+        .contact-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #555555;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-card p {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Mobiele optimalisatie (Responsive layout) */
+        @media (max-width: 1024px) {
+            .project-row, .project-row.row-reverse {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
+            .nav-container { padding: 20px; }
+            .nav-menu { gap: 20px; }
+            
+            .about-section { 
+                flex-direction: column; 
+                text-align: left; 
+                align-items: flex-start;
+                gap: 24px; 
+            }
+
+            .project-row.row-reverse { direction: ltr; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .nav-menu { gap: 15px; }
+            .dropdown-content { position: fixed; left: 20px; right: 20px; top: 65px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav class="main-nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">DV</a>
+            <div class="nav-menu">
+                <a href="#over-mij">Over Mij</a>
+                
+                <div class="dropdown">
+                    <a href="#projecten" class="dropdown-trigger">Projecten <span class="arrow">▼</span></a>
+                    <div class="dropdown-content">
+                        <a href="#koalawards">Koalawards</a>
+                        <a href="#masterproef">Masterproef</a>
+                        <a href="#boomhut">Boomhut</a>
+                        <a href="#truien">Scoutstruien</a>
+                    </div>
+                </div>
+                
+                <a href="#vaardigheden">Vaardigheden</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="hero-banner">
+        <img src="koalawards.gif" alt="Koalawards Banner">
+        <div class="hero-text">
+            <h1>Daan Vercammen</h1>
+        </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Korte Introductie -->
+        <section id="over-mij" class="about-section">
+            <img src="daan.png" alt="Daan Vercammen" class="about-image">
+            <div class="about-text">
+                <h2>Over mij</h2>
+                <p>Ik ben een pas afgestudeerde Industrieel Ingenieur Elektronica met een passie voor media en audio. Ik combineer een sterke technische achtergrond met creativiteit en een praktische aanpak. Door mijn engagement als groepsleider bij de scouts heb ik geleerd om samen te werken met anderen en een team aan te sturen. Ik ben leergierig, sociaal en doelgericht. Ik zoek dan ook graag naar innovatieve oplossingen voor technische uitdagingen.</p>
+            </div>
+        </section>
+
+        <!-- Projecten Content Sectie (Zigzag per foto) -->
+        <main id="projecten">
+            
+            <!-- 1. Koalawards -->
+            <section id="koalawards" class="project-section">
+                <h2 class="shadow-title main-project-title">Koalawards</h2>
+                
+                <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
+<div class="project-row">
+    <div class="project-media">
+        <!-- Jouw foto van de liveband op het podium -->
+        <img src="koalawards1.jpg" alt="Koalawards Live Audio & Lichtsturing">
+    </div>
+    <div class="project-content">
+        <h3 class="sub-project-title">Lichtsturing en audio installatie</h3>
+        <p>In 2021 starte ik samen met een vriend de Koalawards, een (inmiddels)
+jaarlijkse awardshow op mijn scouts. Voor dit evenement ontwerp ik de awards,
+maak ik lampen met eigen besturing (via C++) en installeer ik de volledige
+geluidsinstallatie (voor de liveband waarbij ik zelf ook gitaar speel).</p>
+    </div>
+</div>
+
+<!-- Tweede foto (Rechts) + Tweede tekst (Links) -->
+<div class="project-row row-reverse">
+    <div class="project-media">
+        <!-- Jouw foto met het publiek en het projectiescherm -->
+        <img src="koalawards2.jpg" alt="Koalawards Presentatie & Publiek">
+    </div>
+    <div class="project-content">
+        <h3 class="sub-project-title">Presentatie en video</h3>
+        <p>Naast de installatie proberen we vooral de mensen een toffe avond te geven. Dit door een leuke show te presenteren vol met leuke filmpjes en mooie momenten.</p>
+    </div>
+</div>
+            </section>
+
+            <!-- 2. Masterproef -->
+            <section id="masterproef" class="project-section">
+                <h2 class="main-project-title">Masterproef</h2>
+                
+                <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
+                <div class="project-row">
+                    <div class="project-media">
+                        <img src="master.png" alt="Masterproef Sensorontwikkeling">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="sub-project-title">Sensorontwikkeling & IoT</h3>
+                        <p>In het kader van mijn masterproef ontwierp en bouwde ik zelfstandig fysieke sensoren die specifiek zijn afgestemd op het accuraat opmeten en registreren van omgevingsgeluid bij jeugdverblijven. Deze sensoren brachten geluidsoverlast in en rond jeugdverblijven dan ook uitstekend in kaart. Met als voornaamste doel de uitbaters van jeugdverblijven een zo goed mogelijk beeld te geven op de overlast die groepen veroorzaken. Hiervoor werd een PCB ontworpen, waarop alle componenten zorgvuldig gesoldeerd werden.</p>
+                    </div>
+                </div>
+
+                <!-- Tweede foto (Rechts) + Tweede tekst (Links) -->
+                <div class="project-row row-reverse">
+                    <div class="project-media">
+                        <img src="master2.png" alt="Masterproef Frequentieanalyse & Akoestiek">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="sub-project-title">Feedback uitbaters</h3>
+                        <p>De verzamelde data wordt via algoritmes geclassificeerd aan de hand van frequentiespectra. Op deze manier krijgen de uitbaters een duidelijk en overzichtelijk overzicht, die ze via een website kunnen raadplegen.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Boomhut -->
+            <section id="boomhut" class="project-section">
+                <h2 class="main-project-title">De Boomhut</h2>
+                
+                <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
+                <div class="project-row">
+                    <div class="project-media">
+                        <img src="boomhut1.jpg" alt="Boomhut Constructie">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="sub-project-title">Hands-on Constructie</h3>
+                        <p>Tijdens de lockdown ontwierp en bouwde ik een eigen boomhut. Met weinig middelen, geen proffesioneele hulp maar wel veel tijd.</p>
+                    </div>
+                </div>
+
+                <!-- Tweede foto (Rechts) + Tweede tekst (Links) -->
+                <div class="project-row row-reverse">
+                    <div class="project-media">
+                        <img src="boomhut2.jpg" alt="Boomhut Elektriciteitsnetwerk">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="sub-project-title">Residentiële Elektrotechniek</h3>
+                        <p>De boomhut werd voorzien van de nodige elektrische infrastructuur, dit maakt het de ideale studie locatie.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Scouts Truien -->
+            <section id="truien" class="project-section">
+                <h2 class="main-project-title">Scoutstruien</h2>
+                
+                <!-- Eerste foto (Links) + Eerste tekst (Rechts) -->
+                <div class="project-row">
+                    <div class="project-media">
+                        <img src="scoutstruien1.png" alt="Scoutstrui Grafisch Ontwerp">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="sub-project-title">Grafisch Ontwerp</h3>
+                        <p>Creatie van het visuele concept en digitale vectorbestanden voor de truien van ons internationaalscoutskamp.</p>
+                    </div>
+                </div>
+
+                <!-- Tweede foto (Rechts) + Tweede tekst (Links) -->
+                <div class="project-row row-reverse">
+                    <div class="project-media">
+                        <img src="scoutstruien1.jpg" alt="Scoutstrui Logistiek Management">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="sub-project-title">Project- & Leveranciersbeheer</h3>
+                        <p>Het volledige logistieke proces van A tot Z doorlopen en zorgen voor een effectief eindresultaat. Iets dat ik naast deze truien ook verder heb ontwikkeld als hoodfleider.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Vaardigheden Sectie -->
+        <section id="vaardigheden" class="skills-section">
+            <h2>Vaardigheden</h2>
+            <div class="skills-grid">
+                
+
+                <div class="skill-category">
+                    <h3>IT & Software</h3>
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>C++</span>
+                        <span>Java</span>
+                        <span>HTML</span>
+                        <span>Netwerkarchitectuur</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Hardware & Elektro</h3>
+                    <div class="skill-tags">
+                        <span>Lichtsturing</span>
+                        <span>Systeemintegratie</span>
+                        <span>Hands-on prototyping</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span>Projectmanagement</span>
+                        <span>Probleemoplossend denken</span>
+                        <span>Stressbestendig</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Sectie -->
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <div class="contact-cards">
+                <a href="mailto:daan.vercammen@hotmail.com" class="contact-card">
+                    <h3>Email</h3>
+                    <p>daan.vercammen@hotmail.com</p>
+                </a>
+                <a href="tel:+32468245277" class="contact-card">
+                    <h3>Telefoon</h3>
+                    <p>+32 468 24 52 77</p>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Javascript voor scroll-afhandeling -->
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
+        });
+
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+
+        window.onscroll = function() {
+            var navbar = document.getElementById("navbar");
+            if (window.pageYOffset > (window.innerHeight * 0.70)) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        };
+    </script>
+
+</body>
+</html>
